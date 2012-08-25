@@ -13,7 +13,7 @@ curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
 $answer=curl_exec($ch);
 curl_close($ch);
 $obj=json_decode($answer);
-if ($obj['res']==false)
+if ($obj->res==false)
 {
 header( 'Location: index.php' ); 
 }
