@@ -32,7 +32,7 @@ echo "Orep Global :".$orepglobal." Orep AnswerMe :".$oreplocal;
 }
 else
 {
-echo "<a href='orepreg.php target=_blank'>Connect with ORep</a>";
+echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
 }
 ?>
 <h2>
