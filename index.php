@@ -26,7 +26,7 @@ require_once ('connect_db.php');
 <div class="boxy shadow" id="ORep">
 <h2 class="title">
 <?php 
-if (isset($_SESSION['userid']))
+if (isset($_SESSION['orepid']))
 {
 echo "Orep Global :".$orepglobal." Orep AnswerMe :".$oreplocal;
 }
