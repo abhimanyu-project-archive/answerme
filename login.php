@@ -12,7 +12,7 @@ $pass=md5($pass);
 if($user!=NULL && $pass!=NULL)
 {
     $qstring = "username='".$user."' AND passwordhash='".$pass."'";
-    $query = "SELECT * FROM siteinfo WHERE " . $qstring . ";";
+    $query = "SELECT * FROM userinfo WHERE " . $qstring . ";";
     global $con;
     $auth_table = NULL;
     $auth_table = mysql_query($query, $con);
