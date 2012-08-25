@@ -42,7 +42,7 @@ if($user!=NULL && $pass!=NULL)
         <fieldset >
                 <div id = "loginform" align="center">
                 <legend>Login</legend>
-		<?php if ($wrongpass) {echo "<em>Wrong username/password </em><br/>"} ?>
+		<?php if ($wrongpass) {echo "<em>Wrong username/password </em><br/>";} ?>
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
                 UserName*: &nbsp <input type='text' name='username' id='username'  maxlength="50"/>
                 <br>
