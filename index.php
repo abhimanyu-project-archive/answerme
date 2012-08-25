@@ -5,7 +5,7 @@
 </head>
 <body>
 <div class="boxy shadow" id="logo"> 
-<h1>Answer Me !</h1>
+<h1 class="title">Answer Me !</h1>
 </div>
 </body>
 
