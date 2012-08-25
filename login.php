@@ -27,7 +27,7 @@ if($user!=NULL && $pass!=NULL)
 	$row=mysql_fetch_row($auth_table);
 	if ($row['orepid']!="")
 	{
-		$_SESSION['orepid']=$row['orepid']!;
+		$_SESSION['orepid']=$row['orepid'];
 	}	
 	$_SESSION['userid']=$user;
 	header('Location: index.php');
