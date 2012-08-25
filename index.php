@@ -1,3 +1,19 @@
+<?php 
+session_start();
+if (isset($_SESSION['userid'])
+{
+	$userid=$_SESSION['userid']
+}
+else
+{
+	 header( 'Location: login.php' ); 
+}
+
+
+
+require_once ('connect_db.php');
+
+?>
 <html>
 <head>
 <title>Answer Me</title>
