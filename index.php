@@ -23,5 +23,18 @@ require_once ('connect_db.php');
 <div class="boxy shadow" id="logo"> 
 <h1 class="title">Answer Me !</h1>
 </div>
+<div class="boxy shadow" id="ORep">
+<h2 class="title">
+<?php 
+if (isset($_SESSION['userid']))
+{
+echo "Orep Global :".$orepglobal." Orep AnswerMe :".$oreplocal;
+}
+else
+{
+echo "<a href='orepreg.php'>Connect with ORep</a>";
+}
+?>
+<h2>
 </body>
 

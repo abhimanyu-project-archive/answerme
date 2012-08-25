@@ -1,5 +1,6 @@
 .body {
 width:100%;
+background-color:#515151;
 }
 
 .shadow {
@@ -12,11 +13,13 @@ width:100%;
    display:block;
    width:600px;
    margin:auto;
+   margin-top:15px;
+   margin-bottom:15px;
 }
 
 .title {
    text-align:center;
 }
 #logo {
-   min-height:200px;
+   min-height:100px;
 }

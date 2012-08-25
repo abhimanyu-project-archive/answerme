@@ -16,6 +16,7 @@ if($user!=NULL && $pass!=NULL)
     global $con;
     $auth_table = NULL;
     $auth_table = mysql_query($query, $con);
+
     $size=mysql_num_rows($auth_table);
     if ($size==0)
     {
@@ -23,6 +24,11 @@ if($user!=NULL && $pass!=NULL)
     }
     else
     {
+	$row=mysql_fetch_row($auth_table);
+	if ($row['orepid']!="")
+	{
+		$_SESSION['operid']=$row['orepid']!;
+	}	
 	$_SESSION['userid']=$user;
 	header('Location: index.php');
     }
