@@ -11,6 +11,7 @@ background-color:#515151;
 
 .boxy {
    display:block;
+   float:auto;
    width:750px;
    margin:auto;
    margin-top:15px;
