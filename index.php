@@ -49,6 +49,7 @@ else
 {
 	echo "Site lost authenticity";
 }
+}
 else
 {
 echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
