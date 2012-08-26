@@ -30,7 +30,7 @@ if($row=mysql_fetch_array($query_answer))
 		}
 	
 	$action="UPDATE questions SET (up=".$up.",down=".$down.") WHERE questionid='".$id."';";
-	$actionreply = mysql_query($query, $con);
+	$actionreply = mysql_query($action, $con);
 	}
 	else
 	{
@@ -53,7 +53,7 @@ if($row=mysql_fetch_array($query_answer))
 		}
 		}
 		$action="UPDATE ques_".$qid."SET (up=".$up.",down=".$down.") WHERE answerid='".$id."';";
-		$actionreply = mysql_query($query, $con);     
+		$actionreply = mysql_query($action, $con);     
 	}
 
 
