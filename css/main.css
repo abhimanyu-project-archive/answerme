@@ -24,7 +24,8 @@ background-color:#515151;
    display:block;
    float:right;
    height:200px;
-   margin-left:25px;
+   margin-right:15px;
+   
 }
 
 .vote {
@@ -32,7 +33,7 @@ background-color:#515151;
    display:block;
    float:left;
    height:200px;
-   margin-right:25px;
+   margin-left:15px;
 }
 
 .title {
