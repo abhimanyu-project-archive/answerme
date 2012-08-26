@@ -11,20 +11,21 @@ background-color:#515151;
 
 .boxy {
    display:block;
-   width:600px;
+   width:750px;
    margin:auto;
    margin-top:15px;
    margin-bottom:15px;
 }
+
 .qa {
-   width :400px;
+   width :600px;
    display:block;
    float:right;
    height:200px;
 }
 
 .vote {
-   width: 150px;
+   width: 100px;
    display:block;
    float:left;
    height:200px;
