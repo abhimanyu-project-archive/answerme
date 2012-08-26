@@ -24,7 +24,8 @@ if($user!=NULL && $pass!=NULL)
     }
     else
     {
-	$row=mysql_fetch_row($auth_table);
+	$row=mysql_fetch_array($auth_table);
+	//$blank=$row['orepid'];
 	if ($row['orepid']!="")
 	{
 		$_SESSION['orepid']=$row['orepid'];

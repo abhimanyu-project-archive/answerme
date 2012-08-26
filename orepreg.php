@@ -26,7 +26,7 @@ else
 	$query = "UPDATE userinfo SET orepid='".$siteuserid."' WHERE username='".$username."';";
     	global $con;
     	$auth_table = mysql_query($query, $con);
-
+	$_SESSION['orepid']=$siteuserid;
     	header( 'Location: index.php'); 
 }
 
