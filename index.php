@@ -36,5 +36,19 @@ echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
 }
 ?>
 <h2>
+<?php
+    $query = "SELECT questionid,question FROM questions ;";
+    global $con;
+    $ques_list=NULL;
+    $ques_list = mysql_query($query, $con);
+    for($row=mysql_fetch_row($queslist))
+    {
+         echo "<a href='showques.php?id".$row['questionid']."'><div class='boxy shadow'><p>";
+         echo $row['question'];
+	 echo "</p></div></a>";
+   }
+
+?>
+
 </body>
 
