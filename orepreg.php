@@ -50,6 +50,6 @@ else
 $ssid=$obj['ssid'];
 header( 'Location: http://orep.manyu.in/login.php?ssid='.$ssid ); 
 }
+}
 ?>
-
 
