@@ -28,10 +28,9 @@ $qid=$_GET['id'];
     global $con;
     $ques_list=NULL;
     $ques_list = mysql_query($query, $con);
-    while($row=mysql_fetch_array($ques_list))
-    {
-         echo "<div><h3>".$row['question']."</h3><br/><p>".$row['clarification']."</p></div>";
-   }
+    $row=mysql_fetch_array($ques_list);
+    echo "<div><h3>".$row['question']."</h3><br/><p>".$row['clarification']."</p></div>";
+   
 
 ?>
 
