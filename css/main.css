@@ -16,6 +16,19 @@ background-color:#515151;
    margin-top:15px;
    margin-bottom:15px;
 }
+.qa {
+   width :400px;
+   display:block;
+   float:right;
+   height:200px;
+}
+
+.vote {
+   width: 150px;
+   display:block;
+   float:left;
+   height:200px;
+}
 
 .title {
    text-align:center;

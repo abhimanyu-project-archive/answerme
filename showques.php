@@ -30,7 +30,7 @@ require_once ('connect_db.php');
     $ques_list=NULL;
     $ques_list = mysql_query($query, $con);
     $row=mysql_fetch_array($ques_list);
-    echo "<div class='boxy shadow'><h3>".$row['question']."</h3><br/><p>".$row['clarification']."</p></div>";
+    echo "<div class='boxy shadow'><div class='vote'></div><div class='qa'><h3>".$row['question']."</h3><p>".$row['clarification']."</p></div></div>";
     echo "<div class='boxy shadow'><p>By ".$row['username']." Tagged :".$row['tag1'].",".$row['tag2'].",".$row['tag3']."</div>";
    
 
