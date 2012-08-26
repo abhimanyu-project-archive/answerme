@@ -59,12 +59,37 @@ require_once ('connect_db.php');
 
 </body>
 
-<script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js">
-YUI().use('io', function (Y) {
-    // YUI Code here
+<script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+<script>
+var request;
+var cur;
+YUI().use('node','io','event', function (Y) {
+   Y.all('.vt').on('click',function(e){
+   var qid='abcdefghijklmnopqrstuvwxyzabcd';
+   var dr=e.target.getAttribute("data-rel");
+   if (e.target.hasClass('ques'))
+   {	var type="ques";   }
+   else
+   {    var type="ans";    }
+
+    if (e.target.hasClass('up'))
+   {	var side="up";   }
+   else
+   {    var side="down";    }
+   var uri = "pointupdate.php?type="+type+"&side="+side+"&id="+dr+"&qid="+qid;
+   alert(uri);   
+   function complete(id, o, args) {
+        cur =parseInt(e.target.get("innerHTML"));
+	cur=cur+1;
+	e.target.set("innerHTML",cur);
+   };
+
+  Y.on('io:complete', complete, Y);
+  request = Y.io(uri);  
+//alert(dr);   
+  });
 });
 
 </script>
-
-</script>
+</html>
 

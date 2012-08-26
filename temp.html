@@ -8,20 +8,20 @@
 <h1 class="title">Answer Me !</h1>
 </div>
 <div class='boxy'>
-          <div class='vote shadow'><a href='#' class='up' data-rel='abcdefghijklmnopqrstuvwxyzabcd'>0</a><br/><a href='#' class='down' data-rel='abcdefghijklmnopqrstuvwxyzabcd'>0</a></div>
+          <div class='vote shadow'><a href='#' class='up ques vt' data-rel='abcdefghijklmnopqrstuvwxyzabcd'>0</a><br/><a href='#' class='down ques vt' data-rel='abcdefghijklmnopqrstuvwxyzabcd'>0</a></div>
           <div class='qa shadow'>
           <h3>How many hours of sleeplessness can a man endure</h3>
          <p>I was just wondering if a human can endure long hours of sleeplessness, and if he does not sleep for long will it affect him fatally</p>
          </div>
          </div><div class='boxy shadow'>
           <p>By abhimanyuma Tagged :human-body,sleep,physiology</div><div class='boxy'>
-          <div class='vote shadow'><a href='#' class='up' data-rel=asldjyo87asodf86asfd>0</a><br/><a href='#' class='down' data-rel=asldjyo87asodf86asfd>0</a></div>
+          <div class='vote shadow'><a href='#' class='up ans vt' data-rel='asldjyo87asodf86asfd'>0</a><br/><a href='#' class='down ans vt' data-rel='asldjyo87asodf86asfd'>0</a></div>
           <div class='qa shadow'>
           <h3>THEcreationist says</h3>
          <p>Well it is said that the human body needs about 8 hours of sleep, or else your body will go into overdirve</p>
          </div>
          </div><div class='boxy'>
-          <div class='vote shadow'><a href='#' class='up' data-rel=asldjyo87adsfasdf6asfd>0</a><br/><a href='#' class='down' data-rel=asldjyo87adsfasdf6asfd>0</a></div>
+          <div class='vote shadow'><a href='#' class='up ans vt' data-rel='asldjyo87adsfasdf6asfd'>0</a><br/><a href='#' class='down ans vt' data-rel='asldjyo87adsfasdf6asfd'>0</a></div>
           <div class='qa shadow'>
           <h3>mangatmodi says</h3>
          <p>I once went 72 hours with about 2 hours of sleep, and fainted down, and became unconcious, so I think the body  has it's own mechanisms</p>
@@ -31,22 +31,32 @@
 
 <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
 <script>
+var request;
+var cur;
 YUI().use('node','io','event', function (Y) {
    Y.all('.vt').on('click',function(e){
+   var qid='abcdefghijklmnopqrstuvwxyzabcd';
    var dr=e.target.getAttribute("data-rel");
-   if (Y.hasClass('ques'))
+   if (e.target.hasClass('ques'))
    {	var type="ques";   }
    else
    {    var type="ans";    }
 
-    if (Y.hasClass('up'))
+    if (e.target.hasClass('up'))
    {	var side="up";   }
    else
    {    var side="down";    }
+   var uri = "pointupdate.php?type="+type+"&side="+side+"&id="+dr+"&qid="+qid;
+   alert(uri);   
+   function complete(id, o, args) {
+        cur =parseInt(e.target.get("innerHTML"));
+	cur=cur+1;
+	e.target.set("innerHTML",cur);
+   };
 
-   var uri = "pointupdate.php?type=";
-   var request = Y.io(uri);  
-alert(dr);   
+  Y.on('io:complete', complete, Y);
+  request = Y.io(uri);  
+//alert(dr);   
   });
 });
 
