@@ -35,7 +35,9 @@ else
 echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
 }
 ?>
-<h2>
+</h2>
+</div>
+
 <?php
     $query = "SELECT questionid,question FROM questions ;";
     global $con;
@@ -43,7 +45,7 @@ echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
     $ques_list = mysql_query($query, $con);
     while($row=mysql_fetch_array($ques_list))
     {
-         echo "<a href='showques.php?id".$row['questionid']."'><div class='boxy shadow'><p>";
+         echo "<a href='showques.php?id=".$row['questionid']."'><div class='boxy shadow'><p>";
          echo $row['question'];
 	 echo "</p></div></a>";
    }
