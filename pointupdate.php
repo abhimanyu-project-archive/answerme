@@ -59,7 +59,7 @@ if($row=mysql_fetch_array($query_answer))
 
 }
 
-$query="SELECT orepid FROM userinfo WHERE username='".$user"';";
+$query="SELECT orepid FROM userinfo WHERE username='".$user."';";
 
 $ques_list = mysql_query($query, $con);
 if($row=mysql_fetch_array($ques_list))
