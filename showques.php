@@ -12,7 +12,7 @@ else
 
 
 require_once ('connect_db.php');
-$qid=$_GET['id'];
+
 ?>
 <html>
 <head>
@@ -24,7 +24,8 @@ $qid=$_GET['id'];
 <h1 class="title">Answer Me !</h1>
 </div>
 <?php
-    $query = "SELECT * FROM questions WHERE questionid =".$qid.";";
+   $qid=$_GET['id'];  
+   $query = "SELECT * FROM questions WHERE questionid ='".$qid."';";
     global $con;
     $ques_list=NULL;
     $ques_list = mysql_query($query, $con);
