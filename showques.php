@@ -31,7 +31,7 @@ require_once ('connect_db.php');
     $ques_list = mysql_query($query, $con);
     $row=mysql_fetch_array($ques_list);
     echo "<div class='boxy'>
-          <div class='vote shadow'><a href='#'>".$row['up']."<br/>".$row['down']."</div>
+          <div class='vote shadow'><a href='#'>".$row['up']."</a><br/><a href='#'>".$row['down']."</a></div>
           <div class='qa shadow'>
           <h3>".$row['question']."</h3>
          <p>".$row['clarification']."</p>
