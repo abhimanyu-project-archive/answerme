@@ -5,6 +5,7 @@ $side=$_GET['side'];
 $type=$_GET['type'];
 $qid=$_GET['qid'];
 $points=0;
+
 global $con;
 $questionquery="SELECT * FROM questions where questionid='".$qid."';";
 $questionswer = mysql_query($query, $con);
@@ -30,6 +31,7 @@ if($row=mysql_fetch_array($query_answer))
 		}
 	
 	$action="UPDATE questions SET up=".$up.",down=".$down." WHERE questionid='".$id."';";
+	echo $action;
 	$actionreply = mysql_query($action, $con);
 	}
 	else
