@@ -31,7 +31,7 @@ require_once ('connect_db.php');
     $ques_list = mysql_query($query, $con);
     $row=mysql_fetch_array($ques_list);
     echo "<div class='boxy'>
-          <div class='vote shadow'><a href='#' class='up' data-rel='".$row['questionid']."'>".$row['up']."</a><br/><a href='#' class='down' data-rel='".$row['questionid']."'>".$row['down']."</a></div>
+          <div class='vote shadow'><a href='#' class='up ques vt' data-rel='".$row['questionid']."'>".$row['up']."</a><br/><a href='#' class='down ques vt' data-rel='".$row['questionid']."'>".$row['down']."</a></div>
           <div class='qa shadow'>
           <h3>".$row['question']."</h3>
          <p>".$row['clarification']."</p>
@@ -45,7 +45,7 @@ require_once ('connect_db.php');
    while($row=mysql_fetch_array($ans_list))
    {
    echo "<div class='boxy'>
-          <div class='vote shadow'><a href='#' class='up' data-rel=".$row['answerid'].">".$row['up']."</a><br/><a href='#' class='down' data-rel=".$row['answerid'].">".$row['down']."</a></div>
+          <div class='vote shadow'><a href='#' class='up ans vt' data-rel='".$row['answerid']."'>".$row['up']."</a><br/><a href='#' class='down ans vt' data-rel='".$row['answerid']."'>".$row['down']."</a></div>
           <div class='qa shadow'>
           <h3>".$row['username']." says</h3>
          <p>".$row['anser']."</p>
