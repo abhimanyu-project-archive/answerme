@@ -41,7 +41,7 @@ echo "<a href='orepreg.php' target='_blank'>Connect with ORep</a>";
     global $con;
     $ques_list=NULL;
     $ques_list = mysql_query($query, $con);
-    for($row=mysql_fetch_row($queslist))
+    while($row=mysql_fetch_row($ques_list))
     {
          echo "<a href='showques.php?id".$row['questionid']."'><div class='boxy shadow'><p>";
          echo $row['question'];
