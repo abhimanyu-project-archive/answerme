@@ -8,7 +8,7 @@ $points=0;
 
 global $con;
 $questionquery="SELECT * FROM questions where questionid='".$qid."';";
-$questionanswer = mysql_query($query, $con);
+$questionanswer = mysql_query($questionquery, $con);
 if($row=mysql_fetch_array($questionanswer))
 {
 	$tag[1]=$row['tag1'];
