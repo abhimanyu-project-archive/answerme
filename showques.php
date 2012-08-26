@@ -31,7 +31,7 @@ require_once ('connect_db.php');
     $ques_list = mysql_query($query, $con);
     $row=mysql_fetch_array($ques_list);
     echo "<div class='boxy'>
-          <div class='vote shadow'></div>
+          <div class='vote shadow'><a href='#'>".$row['up']."<br/>".$row['down']."</div>
           <div class='qa shadow'>
           <h3>".$row['question']."</h3>
          <p>".$row['clarification']."</p>
@@ -39,6 +39,20 @@ require_once ('connect_db.php');
          </div>";
     echo "<div class='boxy shadow'>
           <p>By ".$row['username']." Tagged :".$row['tag1'].",".$row['tag2'].",".$row['tag3']."</div>";
+    $query="SELECT * FROM ques_".$qid.";";
+    global $con;
+   $ans_list=mysql_query($query, $con);
+   while($row=mysql_fetch_array($ans_list))
+   {
+   echo "<div class='boxy'>
+          <div class='vote shadow'><a href='#'>".$row['up']."<br/>".$row['down']."</div>
+          <div class='qa shadow'>
+          <h3>".$row['username']." says</h3>
+         <p>".$row['anser']."</p>
+         </div>
+         </div>";
+  }
+
    
 
 ?>
