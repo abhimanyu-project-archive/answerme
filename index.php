@@ -28,7 +28,26 @@ require_once ('connect_db.php');
 <?php 
 if (isset($_SESSION['orepid']))
 {
-echo "Orep Global :".$orepglobal." Orep AnswerMe :".$oreplocal;
+$orepid=$_SESSION['orepid'];
+$ch= curl_init();
+$url="http://orep.manyu.in/changerep.php?siteid=".siteid."&sitekey=".sitekey."&usid=".$orepid;
+echo $url;
+curl_setopt($ch,CURLOPT_URL,$url);
+curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+
+$answer=curl_exec($ch);
+curl_close($ch);
+$obj=json_decode($answer,true);
+if ($obj['result']=='Y')
+{
+	$orepglobal=$obj['global'];
+	$oreplocal=$obj['mysite'];
+	
+	echo "Orep Global :".$orepglobal." Orep AnswerMe :".$oreplocal;
+}
+else
+{
+	echo "Site lost authenticity";
 }
 else
 {

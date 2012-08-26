@@ -29,7 +29,8 @@ if($user!=NULL && $pass!=NULL)
 	if ($row['orepid']!="")
 	{
 		$_SESSION['orepid']=$row['orepid'];
-	}	
+	}
+        	
 	$_SESSION['userid']=$user;
 	header('Location: index.php');
     }
