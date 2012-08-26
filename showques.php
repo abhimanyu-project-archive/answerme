@@ -76,7 +76,7 @@ YUI().use('node','io','event', function (Y) {
    {	var side="up";   }
    else
    {    var side="down";    }
-   var uri = "pointupdate.php?type="+type+"&side="+side+"&id="+dr+"&qid="+qid;
+   var uri = "http://answerme.manyu.in/pointupdate.php?type="+type+"&side="+side+"&id="+dr+"&qid="+qid;
    alert(uri);   
    function complete(id, o, args) {
         cur =parseInt(e.target.get("innerHTML"));
