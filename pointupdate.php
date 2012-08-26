@@ -34,7 +34,7 @@ if($row=mysql_fetch_array($query_answer))
 	}
 	else
 	{
-		$query="SELECT * FROM ques_".$qid." WHERE answerid='".$id"';";
+		$query="SELECT * FROM ques_".$qid." WHERE answerid='".$id."';";
        		$queryanswer = mysql_query($query, $con);
 		if($row=mysql_fetch_array($query_answer))
 		{
@@ -52,14 +52,14 @@ if($row=mysql_fetch_array($query_answer))
 			$points=-1;
 		}
 		}
-		$action="UPDATE ques_ SET (up=".$up",down=".$down") WHERE answerid='".$id."';";
+		$action="UPDATE ques_".$qid."SET (up=".$up.",down=".$down.") WHERE answerid='".$id."';";
 		$actionreply = mysql_query($query, $con);     
 	}
 
 
 }
 
-$query="SELECT orepid FROM userinfo WHERE username=".$user;
+$query="SELECT orepid FROM userinfo WHERE username='".$user"';";
 
 $ques_list = mysql_query($query, $con);
 if($row=mysql_fetch_array($ques_list))
