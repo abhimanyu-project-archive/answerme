@@ -29,7 +29,7 @@ if($row=mysql_fetch_array($query_answer))
 			$points=-1;
 		}
 	
-	$action="UPDATE questions SET (up=".$up",down=".$down") WHERE questionid='".$id."';";
+	$action="UPDATE questions SET (up=".$up.",down=".$down.") WHERE questionid='".$id."';";
 	$actionreply = mysql_query($query, $con);
 	}
 	else
