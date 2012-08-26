@@ -31,7 +31,7 @@ require_once ('connect_db.php');
     $ques_list = mysql_query($query, $con);
     $row=mysql_fetch_array($ques_list);
     echo "<div class='boxy'>
-          <div class='vote shadow'><a href='#'>".$row['up']."</a><br/><a href='#'>".$row['down']."</a></div>
+          <div class='vote shadow'><a href='#' data-rel=>".$row['up']."</a><br/><a href='#'>".$row['down']."</a></div>
           <div class='qa shadow'>
           <h3>".$row['question']."</h3>
          <p>".$row['clarification']."</p>
@@ -45,7 +45,7 @@ require_once ('connect_db.php');
    while($row=mysql_fetch_array($ans_list))
    {
    echo "<div class='boxy'>
-          <div class='vote shadow'><a href='#'>".$row['up']."</a><br/><a href='#'>".$row['down']."</a></div>
+          <div class='vote shadow'><a href='#' data-rel='.$row['answerid'].'>".$row['up']."</a><br/><a href='#'>".$row['down']."</a></div>
           <div class='qa shadow'>
           <h3>".$row['username']." says</h3>
          <p>".$row['anser']."</p>
